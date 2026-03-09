@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/citizen-portal',
+  basePath: process.env.NODE_ENV === 'production' ? '/citizen-portal' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
