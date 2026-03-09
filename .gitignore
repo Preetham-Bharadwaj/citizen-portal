@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+dist/
+build/
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+.DS_Store
+
+# Backend
+__pycache__/
+*.pyc
+backend/.env
+backend/uploads/
+venv/
+.venv/
+env/
+.env/
+
+# Artifacts
+.gemini/
+.agent/
+.agents/
+brain/
+logs/
+overview.txt
+
+# OS File
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,14 @@
+{
+  "name": "citizen-health-app",
+  "version": "1.0.0",
+  "description": "Premium Citizen Health Record Web Application",
+  "scripts": {
+    "start": "npx concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && python -m uvicorn main:app --reload --port 8000",
+    "start:frontend": "cd frontend && npm run dev",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
