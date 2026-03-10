@@ -1,19 +1,39 @@
-🏥 Citizen Health Portal
-A full-stack web application that empowers citizens to manage, upload, and track their medical records securely — powered by Next.js and FastAPI.
-🌐 Live Demo: https://preetham-bharadwaj.github.io/citizen-portal
+# 🏥 Citizen Health Portal
 
-✨ Features
+A full-stack web application that empowers citizens to manage, upload, and track their medical records securely — powered by **Next.js** and **FastAPI**.
 
-🔐 Authentication — Secure login & signup with OTP verification
-📋 Dashboard — Personalized citizen health overview
-📤 Medical Record Upload — Upload documents with OCR + PII detection
-📜 History View — Timeline of past medical records
-🔒 Firebase Integration — Secure data storage and auth
-📱 Responsive UI — Works on mobile and desktop
+🌐 **Live Demo:**
+https://preetham-bharadwaj.github.io/citizen-portal
 
+---
 
-🗂️ Project Structure
+# ✨ Features
+
+🔐 **Authentication**
+Secure login and signup with OTP verification.
+
+📋 **Dashboard**
+Personalized citizen health overview.
+
+📤 **Medical Record Upload**
+Upload medical documents with **OCR processing** and **PII detection**.
+
+📜 **History View**
+View a timeline of past medical records.
+
+🔒 **Firebase Integration**
+Secure authentication and storage using Firebase.
+
+📱 **Responsive UI**
+Fully responsive interface that works on mobile and desktop.
+
+---
+
+# 🗂️ Project Structure
+
+```
 citizen-health-app/
+│
 ├── frontend/               # Next.js app
 │   └── src/
 │       ├── app/            # App router pages
@@ -25,59 +45,117 @@ citizen-health-app/
 │       │   ├── history/page.js     # Medical history view
 │       │   ├── layout.js           # Root layout
 │       │   └── globals.css         # Global styles
-│       ├── components/     # Reusable UI components
+│       │
+│       ├── components/             # Reusable UI components
 │       │   ├── Navbar.js
 │       │   ├── Sidebar.js
 │       │   ├── HealthCard.js
 │       │   ├── Timeline.js
 │       │   ├── FileUpload.js
 │       │   └── OTPInput.js
+│       │
 │       └── lib/
-│           └── api.js      # API client for FastAPI
+│           └── api.js              # API client for FastAPI
 │
-└── backend/                # FastAPI app
-    ├── main.py             # FastAPI entry point + all routes
-    ├── firebase_config.py  # Firebase init
-    ├── processing.py       # OCR + Layout + PII pipeline
-    ├── models.py           # Pydantic models
+└── backend/                        # FastAPI backend
+    ├── main.py                    # FastAPI entry point + routes
+    ├── firebase_config.py         # Firebase initialization
+    ├── processing.py              # OCR + Layout + PII pipeline
+    ├── models.py                  # Pydantic models
     ├── requirements.txt
     └── .env
+```
 
-🚀 Getting Started
-Prerequisites
+---
 
-Node.js 18+
-Python 3.9+
-Firebase account
+# 🚀 Getting Started
 
-Frontend Setup
-bashcd frontend
+## Prerequisites
+
+* Node.js 18+
+* Python 3.9+
+* Firebase Account
+
+---
+
+# 💻 Frontend Setup
+
+```bash
+cd frontend
 npm install
 npm run dev
-Open http://localhost:3000
-Backend Setup
-bashcd backend
+```
+
+Open:
+
+```
+http://localhost:3000
+```
+
+---
+
+# ⚙️ Backend Setup
+
+```bash
+cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
-API runs at http://localhost:8000
-Environment Variables
-Create a .env file in the backend/ folder:
-envFIREBASE_API_KEY=your_key
+```
+
+Backend API runs at:
+
+```
+http://localhost:8000
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file inside the **backend/** folder:
+
+```
+FIREBASE_API_KEY=your_key
 FIREBASE_PROJECT_ID=your_project_id
+```
 
-🛠️ Tech Stack
-LayerTechnologyFrontendNext.js 16, React 19StylingTailwind CSSBackendFastAPI (Python)DatabaseFirebase FirestoreAuthFirebase AuthOCRPII detection pipelineHostingGitHub Pages
+---
 
-📦 Deployment
-bashcd frontend
+# 🛠️ Tech Stack
+
+| Layer            | Technology           |
+| ---------------- | -------------------- |
+| Frontend         | Next.js 16, React 19 |
+| Styling          | Tailwind CSS         |
+| Backend          | FastAPI (Python)     |
+| Database         | Firebase Firestore   |
+| Authentication   | Firebase Auth        |
+| OCR              | PaddleOCR            |
+| Data Structuring | LayoutLMv3           |
+| Hosting          | GitHub Pages         |
+
+---
+
+# 📦 Deployment
+
+```bash
+cd frontend
 npm run deploy
-Deploys to GitHub Pages automatically via gh-pages.
+```
 
-👨‍💻 Author
-Preetham Bharadwaj
+Deploys automatically to **GitHub Pages** using **gh-pages**.
 
-GitHub: @Preetham-Bharadwaj
+---
 
+# 👨‍💻 Author
 
-📄 License
-This project is open source and available under the MIT License.
+**Preetham Bharadwaj**
+
+GitHub:
+https://github.com/Preetham-Bharadwaj
+
+---
+
+# 📄 License
+
+This project is open source and available under the **MIT License**.
