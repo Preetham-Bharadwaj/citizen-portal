@@ -1,4 +1,4 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "https://citizen-health-backend.onrender.com";
 
 async function request(endpoint, options = {}) {
   const url = `${API_BASE}${endpoint}`;
