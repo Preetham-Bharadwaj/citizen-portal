@@ -9,6 +9,7 @@
     "install:all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt"
   },
   "devDependencies": {
-    "concurrently": "^8.2.2"
+    "concurrently": "^8.2.2",
+    "gh-pages": "^6.3.0"
   }
 }

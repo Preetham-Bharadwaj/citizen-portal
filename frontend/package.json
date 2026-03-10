@@ -2,11 +2,15 @@
   "name": "citizen-health-frontend",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "homepage": "https://Preetham-Bharadwaj.github.io/citizen-portal",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "predeploy": "npm run build && node -e \"require('fs').writeFileSync('out/.nojekyll', '')\"",
+    "deploy": "gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "next": "16.1.6",
@@ -15,6 +19,7 @@
   },
   "devDependencies": {
     "eslint": "^9",
-    "eslint-config-next": "16.1.6"
+    "eslint-config-next": "16.1.6",
+    "gh-pages": "^6.3.0"
   }
 }
