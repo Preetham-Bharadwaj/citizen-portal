@@ -1,0 +1,16 @@
+{
+  "name": "citizen-health-app",
+  "version": "1.0.0",
+  "description": "Citizen Health Portal",
+  "scripts": {
+    "start": "concurrently --kill-others --names \"BACKEND,FRONTEND\" --prefix-colors \"bgBlue.bold,bgGreen.bold\" \"npm run start:backend\" \"npm run start:frontend\"",
+    "start:backend": "cd backend && python main.py",
+    "start:frontend": "cd frontend && npm run dev -- -p 3001"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
