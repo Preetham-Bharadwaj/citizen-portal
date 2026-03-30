@@ -6,9 +6,11 @@ Handles authentication, document processing, family members, and Firebase intera
 import uuid
 import os
 from pathlib import Path
+from io import BytesIO
 
+import qrcode
 from fastapi import FastAPI, UploadFile, File, HTTPException, Form
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
 from models import UserSignup, UserLogin, OTPVerify, AddFamilyMember, FamilyVerifyRequest, FamilyConfirmRequest
 from firebase_config import (
@@ -31,20 +33,10 @@ app = FastAPI(
     version="2.0.0",
 )
 
-allowed_origins = [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:3001",
-    "http://192.168.56.1:3000",
-    "http://192.168.56.1:3001",
-    "https://preetham-bharadwaj.github.io",
-]
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=allowed_origins,
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -476,6 +468,37 @@ def delete_record_file(user_id: str, record_id: str):
         "message": "Document removed successfully",
         "record": record
     }
+
+
+# ─── QR Code Generation ───
+
+@app.get("/api/qr-code/{health_id}")
+def generate_qr_code(health_id: str):
+    """Generate QR code for Health ID - returns PNG image"""
+    if not health_id:
+        raise HTTPException(status_code=400, detail="Health ID is required")
+    
+    # Generate QR code
+    qr = qrcode.QRCode(
+        version=1,
+        error_correction=qrcode.constants.ERROR_CORRECT_H,
+        box_size=10,
+        border=4,
+    )
+    qr.add_data(health_id)
+    qr.make(fit=True)
+    
+    # Create image
+    img = qr.make_image(fill_color="black", back_color="white")
+    
+    # Save to buffer
+    buf = BytesIO()
+    img.save(buf, format="PNG")
+    buf.seek(0)
+    
+    return StreamingResponse(buf, media_type="image/png", headers={
+        "Content-Disposition": f'inline; filename="qr-{health_id}.png"'
+    })
 
 
 # ─── Medical Records ───

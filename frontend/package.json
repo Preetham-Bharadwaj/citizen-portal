@@ -6,6 +6,7 @@
   "homepage": "https://Preetham-Bharadwaj.github.io/citizen-portal",
   "scripts": {
     "dev": "next dev",
+    "dev:network": "next dev -H 0.0.0.0 -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

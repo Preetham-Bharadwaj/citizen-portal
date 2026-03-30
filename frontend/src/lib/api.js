@@ -75,4 +75,7 @@ export const api = {
 
   // Records
   getRecords: (userId) => request(`/api/records/${userId}`),
+
+  // QR Code
+  getQRCodeUrl: (healthId) => `${API_BASE}/api/qr-code/${healthId}`,
 };

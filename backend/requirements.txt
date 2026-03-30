@@ -8,3 +8,4 @@ fpdf2==2.8.1
 openai==1.51.0
 gunicorn==23.0.0
 bcrypt==4.2.0
+qrcode[pil]==7.4.2

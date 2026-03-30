@@ -47,7 +47,8 @@ export default function DashboardPage() {
   // Profile Modal
   const [showProfileModal, setShowProfileModal] = useState(false);
 
-  // New Upload Tab State
+  // QR Code Modal
+  const [showQRModal, setShowQRModal] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(-1); // -1: none, 0-4: stages
   const [newFile, setNewFile] = useState(null);
   const [newUploadError, setNewUploadError] = useState("");
@@ -316,6 +317,11 @@ export default function DashboardPage() {
                       {profile?.state && <span>📍 {profile.state}</span>}
                       {profile?.date_of_birth && <span>🎂 {profile.date_of_birth}</span>}
                     </div>
+                  </div>
+                  <div style={{ marginTop: "16px", display: "flex", gap: "12px" }}>
+                    <button className="btn btn-outline btn-sm" onClick={() => setShowProfileModal(true)}>
+                      👤 View Full Profile
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1287,6 +1293,43 @@ export default function DashboardPage() {
                     {profile?.district ? `${profile.district}, ` : ""}
                     {profile?.state || "N/A"}
                   </p>
+                </div>
+
+                {/* QR Code Section */}
+                <div style={{ marginTop: "24px", padding: "24px", background: "linear-gradient(135deg, #f0f9ff, #e0f2fe)", borderRadius: "var(--radius-lg)", textAlign: "center", border: "1px solid #bae6fd" }}>
+                  <h4 style={{ marginBottom: "16px", color: "#0369a1", fontSize: "1rem" }}>📱 Health ID QR Code</h4>
+                  <p style={{ fontSize: "0.85rem", color: "#64748b", marginBottom: "16px" }}>
+                    Show this QR code at hospitals for quick identification
+                  </p>
+                  <div style={{ 
+                    background: "white", 
+                    padding: "16px", 
+                    borderRadius: "12px", 
+                    display: "inline-block",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1)"
+                  }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                      src={api.getQRCodeUrl(profile?.abha_id || user?.abha_id)} 
+                      alt="Health ID QR Code" 
+                      style={{ width: "180px", height: "180px" }}
+                    />
+                  </div>
+                  <div style={{ marginTop: "12px" }}>
+                    <p style={{ fontSize: "0.95rem", fontWeight: 600, color: "#0369a1" }}>
+                      {profile?.abha_id || user?.abha_id}
+                    </p>
+                  </div>
+                  <div style={{ marginTop: "16px" }}>
+                    <a 
+                      href={api.getQRCodeUrl(profile?.abha_id || user?.abha_id)}
+                      download={`qr-${profile?.abha_id || user?.abha_id}.png`}
+                      className="btn btn-primary btn-sm"
+                      style={{ textDecoration: "none" }}
+                    >
+                      ⬇️ Download QR Code
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
