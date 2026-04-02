@@ -1,160 +1,118 @@
-# 🏥 Citizen Health Portal
+# 🚀 Secure Digital Health Record Ecosystem
 
-A full-stack web application that empowers citizens to manage, upload, and track their medical records securely — powered by **Next.js** and **FastAPI**.
-
-🌐 **Live Demo:**
+> **One Health ID. One Complete Medical History. Anywhere. Anytime.**
 
 ---
 
-# ✨ Features
+## 🧾 Overview
 
-🔐 **Authentication**
-Secure login and signup with OTP verification.
+This project is a **unified digital healthcare platform** that securely stores and shares patient medical records across hospitals.
 
-📋 **Dashboard**
-Personalized citizen health overview.
-
-📤 **Medical Record Upload**
-Upload medical documents with **OCR processing** and **PII detection**.
-
-📜 **History View**
-View a timeline of past medical records.
-
-🔒 **Firebase Integration**
-Secure authentication and storage using Firebase.
-
-📱 **Responsive UI**
-Fully responsive interface that works on mobile and desktop.
+It connects **Citizens, Doctors, and Researchers** into a single ecosystem using a **Unique Health ID**, ensuring **continuity of care, faster diagnosis, and data-driven healthcare decisions**.
 
 ---
 
-# 🗂️ Project Structure
+## 🌐 System Architecture
 
-```
-citizen-health-app/
-│
-├── frontend/               # Next.js app
-│   └── src/
-│       ├── app/            # App router pages
-│       │   ├── page.js             # Landing → redirect to login
-│       │   ├── login/page.js       # Login page
-│       │   ├── signup/page.js      # Signup page
-│       │   ├── dashboard/page.js   # Citizen dashboard
-│       │   ├── upload/page.js      # Medical record upload
-│       │   ├── history/page.js     # Medical history view
-│       │   ├── layout.js           # Root layout
-│       │   └── globals.css         # Global styles
-│       │
-│       ├── components/             # Reusable UI components
-│       │   ├── Navbar.js
-│       │   ├── Sidebar.js
-│       │   ├── HealthCard.js
-│       │   ├── Timeline.js
-│       │   ├── FileUpload.js
-│       │   └── OTPInput.js
-│       │
-│       └── lib/
-│           └── api.js              # API client for FastAPI
-│
-└── backend/                        # FastAPI backend
-    ├── main.py                    # FastAPI entry point + routes
-    ├── firebase_config.py         # Firebase initialization
-    ├── processing.py              # OCR + Layout + PII pipeline
-    ├── models.py                  # Pydantic models
-    ├── requirements.txt
-    └── .env
-```
+The system is built as a **multi-portal ecosystem**:
+
+### 👤 Citizen Portal (This Repository)
+
+* User registration & secure login
+* Generates **Unique Health ID**
+* View complete **medical history timeline**
+* Upload medical reports (PDF/JPG/PNG)
+* **QR Code generation** for instant access
 
 ---
 
-# 🚀 Getting Started
+### 🏥 Doctor / Hospital Portal
 
-## Prerequisites
+Enables doctors to access and update patient records in real time.
 
-* Node.js 18+
-* Python 3.9+
-* Firebase Account
+🔗 Repository:
+ADD_DOCTOR_PORTAL_LINK_HERE
 
----
+**Features:**
 
-# 💻 Frontend Setup
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Open:
-
-```
-http://localhost:3000
-```
+* Secure doctor login
+* Retrieve patient history using **Health ID / QR scan**
+* Add treatment details & prescriptions
+* Upload reports
+* **QR-based patient identification**
 
 ---
 
-# ⚙️ Backend Setup
+### 📊 Research & Public Health Portal
 
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-```
+Transforms healthcare data into actionable insights.
 
-Backend API runs at:
+🔗 Repository:
+ADD_RESEARCH_PORTAL_LINK_HERE
 
-```
-http://localhost:8000
-```
+**Features:**
 
----
-
-# 🔑 Environment Variables
-
-Create a `.env` file inside the **backend/** folder:
-
-```
-FIREBASE_API_KEY=your_key
-FIREBASE_PROJECT_ID=your_project_id
-```
+* Disease trend analysis
+* Region-based insights
+* Severity detection (Low / Medium / High)
+* **AI-based alert system for citizens**
+* Public health monitoring & decision support
 
 ---
 
-# 🛠️ Tech Stack
+## ✨ Key Features
 
-| Layer            | Technology           |
-| ---------------- | -------------------- |
-| Frontend         | Next.js 16, React 19 |
-| Styling          | Tailwind CSS         |
-| Backend          | FastAPI (Python)     |
-| Database         | Firebase Firestore   |
-| Authentication   | Firebase Auth        |
-| OCR              | PaddleOCR            |
-| Data Structuring | LayoutLMv3           |
-| Hosting          | GitHub Pages         |
+* 🔑 Unique Health ID for every citizen
+* 🔄 Cross-hospital medical record access
+* ⚡ Real-time data synchronization
+* 📷 QR-based instant patient identification
+* 📈 Research insights & alert system
+* 🔐 Secure and role-based access control
 
 ---
 
-# 📦 Deployment
+## 🛠 Tech Stack
 
-```bash
-cd frontend
-npm run deploy
-```
-
-Deploys automatically to **GitHub Pages** using **gh-pages**.
-
----
-
-# 👨‍💻 Author
-
-**Preetham Bharadwaj**
-
-GitHub:
-https://github.com/Preetham-Bharadwaj
+| Layer            | Technology                |
+| ---------------- | ------------------------- |
+| Frontend         | Next.js                   |
+| Backend          | FastAPI (Python)          |
+| Database         | Firebase Firestore        |
+| Authentication   | Firebase Auth (OTP-based) |
+| OCR              | PaddleOCR                 |
+| Data Structuring | LayoutLMv3                |
+| QR System        | qrcode, html5-qrcode      |
 
 ---
 
-# 📄 License
+## 🔄 Workflow
 
-This project is open source and available under the **MIT License**.
+1. Citizen registers → gets **Unique Health ID**
+2. Patient visits hospital → shares **Health ID / QR**
+3. Doctor retrieves patient history
+4. Doctor updates treatment records
+5. Data stored in Firebase (real-time sync)
+6. Citizen views updated records instantly
+7. Research portal analyzes data & generates alerts
+
+---
+
+## 🌍 Real-World Impact
+
+A patient treated in one city can visit another hospital **without carrying physical reports**.
+Doctors can instantly access medical history, reducing **delays, repeated tests, and medical errors**.
+
+---
+
+## 🔮 Future Scope
+
+* Integration with national healthcare systems
+* Advanced AI-based disease prediction
+* Mobile application support
+* Wearable health device integration
+
+---
+
+## 📜 License
+
+This project is developed for **educational and hackathon purposes**.
