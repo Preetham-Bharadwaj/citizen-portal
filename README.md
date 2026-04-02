@@ -31,7 +31,7 @@ The system is built as a **multi-portal ecosystem**:
 Enables doctors to access and update patient records in real time.
 
 🔗 Repository:
-ADD_DOCTOR_PORTAL_LINK_HERE
+https://github.com/Preetham-Bharadwaj/Doctor-Portal
 
 **Features:**
 
@@ -48,7 +48,7 @@ ADD_DOCTOR_PORTAL_LINK_HERE
 Transforms healthcare data into actionable insights.
 
 🔗 Repository:
-ADD_RESEARCH_PORTAL_LINK_HERE
+https://github.com/Preetham-Bharadwaj/Research-Public-portal.git
 
 **Features:**
 
