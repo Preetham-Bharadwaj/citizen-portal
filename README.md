@@ -1,10 +1,10 @@
-# 🚀 Secure Digital Health Record Ecosystem
+### Secure Digital Health Record Ecosystem
 
 > **One Health ID. One Complete Medical History. Anywhere. Anytime.**
 
 ---
 
-## 🧾 Overview
+##  Overview
 
 This project is a **unified digital healthcare platform** that securely stores and shares patient medical records across hospitals.
 
@@ -12,7 +12,7 @@ It connects **Citizens, Doctors, and Researchers** into a single ecosystem using
 
 ---
 
-## 🌐 System Architecture
+##  System Architecture
 
 The system is built as a **multi-portal ecosystem**:
 
@@ -62,12 +62,12 @@ ADD_RESEARCH_PORTAL_LINK_HERE
 
 ## ✨ Key Features
 
-* 🔑 Unique Health ID for every citizen
-* 🔄 Cross-hospital medical record access
-* ⚡ Real-time data synchronization
-* 📷 QR-based instant patient identification
-* 📈 Research insights & alert system
-* 🔐 Secure and role-based access control
+*  Unique Health ID for every citizen
+*  Cross-hospital medical record access
+*  Real-time data synchronization
+*  QR-based instant patient identification
+*  Research insights & alert system
+*  Secure and role-based access control
 
 ---
 
@@ -85,7 +85,7 @@ ADD_RESEARCH_PORTAL_LINK_HERE
 
 ---
 
-## 🔄 Workflow
+##  Workflow
 
 1. Citizen registers → gets **Unique Health ID**
 2. Patient visits hospital → shares **Health ID / QR**
@@ -97,14 +97,14 @@ ADD_RESEARCH_PORTAL_LINK_HERE
 
 ---
 
-## 🌍 Real-World Impact
+##  Real-World Impact
 
 A patient treated in one city can visit another hospital **without carrying physical reports**.
 Doctors can instantly access medical history, reducing **delays, repeated tests, and medical errors**.
 
 ---
 
-## 🔮 Future Scope
+##  Future Scope
 
 * Integration with national healthcare systems
 * Advanced AI-based disease prediction
@@ -113,6 +113,6 @@ Doctors can instantly access medical history, reducing **delays, repeated tests,
 
 ---
 
-## 📜 License
+##  License
 
 This project is developed for **educational and hackathon purposes**.
